@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+
+##### Setting GNU Screen title to SSH hostname
+# https://petervibert.com/wp/screen-ssh-hostname/
+#
+## Add to ~/.ssh/config:
+#
+# PermitLocalCommand yes
+# LocalCommand ~/.ssh_hostname %h
+#
+## This interferes with Git SSH commands, so be sure to exclude those hosts, for example:
+#
+# Host * !bitbucket.org
+# PermitLocalCommand yes
+# LocalCommand ~/.ssh_hostname %h
+#
+#####
+
+printf "\033k$1\033\\"
